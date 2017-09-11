@@ -29,7 +29,7 @@ Compiling ./contracts/Migrations.sol...
 Compiling ./contracts/MiniMeToken.sol...
 Writing artifacts to ./build/contracts
 ```
-1. Execute `truffle migrate --reset`:  
+2. Execute `truffle migrate --reset`:  
 ```
 Adams-MBP:CryptoExplorers adamdossa$ truffle migrate --reset
 Using network 'development'.
@@ -47,12 +47,12 @@ Saving successful migration to network...
 Saving artifacts...
   CryptoExplorersToken: 0x3f9a42997952682d2ac31ffd6e48f2158ee6b2c7
 ```
-1. Edit `scripts/migrateBalances.js` to reflect:  
+3. Edit `scripts/migrateBalances.js` to reflect:  
   - the controller of the token contract (address that deployed it above).
   - the address of the token contract (output above).
-1. Edit `scripts/migrateBalances.csv` to reflect the accounts you want to update:
-  - line format is <address>,<number of tokens to assign>
-1. Execute `node scripts/migrateBalances.js`:  
+4. Edit `scripts/migrateBalances.csv` to reflect the accounts you want to update:
+  - line format is [address],[number of tokens to assign]
+5. Execute `node scripts/migrateBalances.js`:  
 ```
 Adams-MBP:CryptoExplorers adamdossa$ node scripts/migrateBalances.js
 Transaction: 0 Length: 11

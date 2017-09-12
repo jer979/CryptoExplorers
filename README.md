@@ -15,6 +15,8 @@ https://cryptoexplorers.org
 https://nodejs.org/en/ (v8.4.0)  
 http://truffle.readthedocs.io/en/beta/getting_started/installation/
 
+1. Run `npm install` in the repo root directory.
+
 1. Run either a geth node, or testrpc on port 8547:  
 `testrpc -p8547`  
 `geth --testnet --fast --rpc`
@@ -47,12 +49,15 @@ Saving successful migration to network...
 Saving artifacts...
   CryptoExplorersToken: 0x3f9a42997952682d2ac31ffd6e48f2158ee6b2c7
 ```
-3. Edit `scripts/migrateBalances.js` to reflect:  
+
+## Updating Balances
+
+1. Edit `scripts/migrateBalances.js` to reflect:  
   - the controller of the token contract (address that deployed it above).
   - the address of the token contract (output above).
-4. Edit `scripts/migrateBalances.csv` to reflect the accounts you want to update:
+2. Edit `scripts/migrateBalances.csv` to reflect the accounts you want to update:
   - line format is [address],[number of tokens to assign]
-5. Execute `node scripts/migrateBalances.js`:  
+3. Execute `node scripts/migrateBalances.js`:  
 ```
 Adams-MBP:CryptoExplorers adamdossa$ node scripts/migrateBalances.js
 Transaction: 0 Length: 11

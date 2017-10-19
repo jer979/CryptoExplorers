@@ -1,7 +1,7 @@
 // GENERAL PARAMS
 
-const sourceAccount = "0xfaf570c768b8b1067420d92c4eeef8d80c2feddc";
-const tokenAddress = '0x5a7b68bd9b193b4539584aafefcd007731600b88';
+const sourceAccount = "0x9a9d8ff9854a2722a76a99de6c1bb71d93898ef5";
+const tokenAddress = "0x12ffb62972c4f3f01a3eda63104cab7ffdc96689";
 
 const Web3 = require("web3");
 const fs = require("fs");
@@ -9,7 +9,7 @@ const async = require("async");
 const path = require("path");
 // create an instance of web3 using the HTTP provider.
 // NOTE in mist web3 is already available, so check first if its available before instantiating
-const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8547"));
+const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
 const BigNumber = require("bignumber.js");
 
@@ -78,7 +78,7 @@ const multiSend = (balances, cb) => {
             pos += multiple;
             token.multiMint(
                 sendBalances,
-                { from: sourceAccount, gas: 3700000, gasPrice: eth.gasPrice.mul(0.1).floor() },
+                { from: sourceAccount, gas: 3700000, gasPrice: eth.gasPrice.mul(0.5).floor() },
                 (err, txHash) => {
                     if (err) return cb(err);
                     console.log("txHash: ", txHash);

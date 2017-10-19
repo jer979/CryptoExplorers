@@ -18,8 +18,11 @@ http://truffle.readthedocs.io/en/beta/getting_started/installation/
 1. Run `npm install` in the repo root directory.
 
 1. Run either a geth node, or testrpc on port 8547:  
-`testrpc -p8547`  
-`geth --testnet --fast --rpc`
+`testrpc`  
+`geth --syncmode fast --cache 1024 --testnet --rpc`
+
+To run a mainnet geth node, you can use:  
+`geth --syncmode fast --cache 1024 --rpc`
 
 ## Deployment
 

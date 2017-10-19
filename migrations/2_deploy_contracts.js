@@ -1,8 +1,5 @@
-var MiniMeTokenFactory = artifacts.require("MiniMeTokenFactory");
-var CryptoExplorersToken = artifacts.require("./CryptoExplorersToken.sol");
+var CVT2Token = artifacts.require("./CVT2Token.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(MiniMeTokenFactory).then(function() {
-    deployer.deploy(CryptoExplorersToken, MiniMeTokenFactory.address);
-  });
+  deployer.deploy(CVT2Token);
 };
